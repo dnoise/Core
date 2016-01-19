@@ -21,6 +21,8 @@ class GetHumanStatus extends BaseGetStatus
 
     const STATUS_CANCELED = 'canceled';
 
+    const STATUS_RESERVED = 'reserved';
+
     const STATUS_NEW = 'new';
 
     /**
@@ -191,5 +193,21 @@ class GetHumanStatus extends BaseGetStatus
     protected function isCurrentStatusEqualTo($expectedStatus)
     {
         return $this->getValue() === $expectedStatus;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isReversed()
+    {
+        return $this->isCurrentStatusEqualTo(static::STATUS_RESERVED);
+    }
+
+    /**
+     * @return void
+     */
+    public function markReversed()
+    {
+        $this->status = static::STATUS_RESERVED;
     }
 }

@@ -192,4 +192,20 @@ class GetBinaryStatus extends BaseGetStatus
     {
         return ($expectedStatus | $this->getValue()) == $expectedStatus;
     }
+
+    /**
+     * @return boolean
+     */
+    public function isReversed()
+    {
+        // TODO: Implement isReversed() method.
+    }
+
+    /**
+     * @return void
+     */
+    public function markReversed()
+    {
+        // TODO: Implement markReversed() method.
+    }
 }
